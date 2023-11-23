@@ -32,14 +32,6 @@ func ConnectionDatabase() {
 		panic(err)
 	}
 
-	/* sqlDB, _ := db.DB()
-
-	sqlDB.SetMaxIdleConns(500)
-
-	sqlDB.SetMaxOpenConns(500)
-
-	sqlDB.SetConnMaxLifetime(1 * time.Hour) */
-
 	db.AutoMigrate(&Kamar{})
 
 	DB = db
