@@ -4,18 +4,21 @@ import "time"
 
 type Kamar struct {
 	Id          string    `gorm:"type:varchar(20); primaryKey" json:"id"`
-	Markusnicu  string    `gorm:"type:varchar(20)" json:"markusnicu"`
-	Markusvvip  string    `gorm:"type:varchar(20)" json:"markusvvip"`
-	Markusvip   string    `gorm:"type:varchar(20)" json:"markusvip"`
-	Lukas       string    `gorm:"type:varchar(20)" json:"lukas"`
-	Maria       string    `gorm:"type:varchar(20)" json:"maria"`
-	Fransiskus  string    `gorm:"type:varchar(20)" json:"fransiskus"`
-	Matius      string    `gorm:"type:varchar(20)" json:"matius"`
-	Teresia     string    `gorm:"type:varchar(20)" json:"teresia"`
-	Teresiatiga string    `gorm:"type:varchar(20)" json:"teresiatiga"`
-	Yosef       string    `gorm:"type:varchar(20)" json:"yosef"`
-	Klara       string    `gorm:"type:varchar(20)" json:"klara"`
-	Egidio      string    `gorm:"type:varchar(20)" json:"egidio"`
-	Yohanes     string    `gorm:"type:varchar(20)" json:"yohanes"`
-	UpdatedAt   time.Time `json:"updated_at"`
+	Markusnicu  int    	  `json:"markusnicu"`
+	Markusvvip  int    	  `json:"markusvvip"`
+	Markusvip   int    	  `json:"markusvip"`
+	Lukas       int    	  `json:"lukas"`
+	Maria       int    	  `json:"maria"`
+	Fransiskus  int    	  `json:"fransiskus"`
+	Matius      int    	  `json:"matius"`
+	Teresia     int    	  `json:"teresia"`
+	Teresiatiga int    	  `json:"teresiatiga"`
+	Yosef       int    	  `json:"yosef"`
+	Klara       int    	  `json:"klara"`
+	Egidio      int    	  `json:"egidio"`
+	Yohanes     int    	  `json:"yohanes"`
+	Total     	int    	  `json:"total"`
+	Tersedia    int    	  `json:"tersedia"`
+	Terisi    int    	  `json:"terisi"`
+	Updated   time.Time `json:"updated_at"`
 }
