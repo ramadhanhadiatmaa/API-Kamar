@@ -3,6 +3,7 @@ package controllers
 import (
 	"apikamar/models"
 	"net/http"
+	"time"
 
 	"github.com/gofiber/fiber/v2"
 	"gorm.io/gorm"
@@ -49,6 +50,12 @@ func Create (c *fiber.Ctx) error {
 		})
 	}
 
+	kamar.Updated = time.Now()
+
+	kamar.Total = 47
+	kamar.Tersedia = kamar.Markusnicu + kamar.Markusvvip + kamar.Markusvip + kamar.Lukas + kamar.Maria + kamar.Fransiskus + kamar.Matius + kamar.Teresia + kamar.Teresiatiga + kamar.Yosef + kamar.Klara + kamar.Egidio + kamar.Yohanes
+	kamar.Terisi = kamar.Total - kamar.Tersedia
+
 	if err := models.DB.Create(&kamar).Error; err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
 			"message": err.Error(),
@@ -70,6 +77,12 @@ func Update (c *fiber.Ctx) error {
 			"message": err.Error(),
 		})
 	}
+
+	kamar.Updated = time.Now()
+
+	kamar.Total = 47
+	kamar.Tersedia = kamar.Markusnicu + kamar.Markusvvip + kamar.Markusvip + kamar.Lukas + kamar.Maria + kamar.Fransiskus + kamar.Matius + kamar.Teresia + kamar.Teresiatiga + kamar.Yosef + kamar.Klara + kamar.Egidio + kamar.Yohanes
+	kamar.Terisi = kamar.Total - kamar.Tersedia
 
 	if models.DB.Where("id = ?", id).Updates(&kamar).RowsAffected == 0 {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
